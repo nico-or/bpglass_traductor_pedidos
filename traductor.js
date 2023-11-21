@@ -2,14 +2,14 @@
 
 // separador dictionary
 const separadorMap = new Map();
-separadorMap.set("6", "Sep. 5,5");
-separadorMap.set("8", "Sep. 7,5");
-separadorMap.set("10", "Sep. 9,5");
-separadorMap.set("12", "Sep. 11,5");
-separadorMap.set("14", "Sep. 14,5");
-separadorMap.set("15", "Sep. 14,5");
-separadorMap.set("19", "Sep. 19,5");
-separadorMap.set("20", "Sep. 19,5");
+separadorMap.set("6", "Sep 5,5");
+separadorMap.set("8", "Sep 7,5");
+separadorMap.set("10", "Sep 9,5");
+separadorMap.set("12", "Sep 11,5");
+separadorMap.set("14", "Sep 14,5");
+separadorMap.set("15", "Sep 14,5");
+separadorMap.set("19", "Sep 19,5");
+separadorMap.set("20", "Sep 19,5");
 
 // vidrio dictionary
 const vidrioMap = new Map();
