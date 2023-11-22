@@ -32,6 +32,7 @@ const input_textarea = document.querySelector("#input_textarea");
 const input_button = document.querySelector("#input_button");
 const output_textarea = document.querySelector("#output_textarea");
 const output_button = document.querySelector("#output_button");
+const erase_button = document.querySelector("#erase_button");
 
 // Split lines utility functions
 const splitOnChar = (input, char) => input.split(char);
@@ -122,7 +123,8 @@ const writePedido = (pedido) => {
   ].join("\t");
 };
 
-input_button.addEventListener("click", () => {
+input_button.addEventListener("click", (event) => {
+  event.preventDefault();
   const pedidos = splitOnNewLine(input_textarea.value)
     .filter(lineHasDescription)
     .map(parsePosicionLine);
@@ -141,8 +143,16 @@ input_button.addEventListener("click", () => {
   output_textarea.value = output;
 });
 
-output_button.onclick = () => {
+output_button.onclick = (event) => {
+  event.preventDefault();
   navigator.clipboard.writeText(output_textarea.value);
+};
+
+erase_button.onclick = (event) => {
+  console.log("erasing...");
+  event.preventDefault();
+  input_textarea.value = "";
+  output_textarea.value = "";
 };
 
 // Botón para operación completa (pegar+traducir+copiar)

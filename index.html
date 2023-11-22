@@ -34,21 +34,29 @@
           <textarea
             id="input_textarea"
             rows="2"
-            placeholder="Pegar pedido Renovatek"
+            placeholder="Pegar pedido"
           ></textarea>
           <textarea id="output_textarea" rows="2" readonly></textarea>
         </fieldset>
 
         <!-- botones para ejecutar acciones -->
-        <fieldset class="grid">
-          <!-- <button id="paste_button">Paste Clipboard</button> -->
-          <button id="input_button" class="primary">
-            <span style="margin-right: 0.4rem">Traducir</span>
-            <i class="bi bi-translate"></i>
-          </button>
-          <button id="output_button" class="secondary">
-            <span style="margin-right: 0.4rem">Copiar</span>
-            <i class="bi bi-copy"></i>
+        <fieldset>
+          <div class="grid">
+            <!-- <button id="paste_button">Paste Clipboard</button> -->
+            <button id="input_button" class="primary">
+              <span style="margin-right: 0.4rem">Traducir</span>
+              <i class="bi bi-translate"></i>
+            </button>
+            <button id="output_button" class="secondary">
+              <span style="margin-right: 0.4rem">Copiar</span>
+              <i class="bi bi-copy"></i>
+            </button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <button id="erase_button" class="secondary outline">
+            Borrar
+            <i class="bi bi-eraser"></i>
           </button>
         </fieldset>
       </form>
