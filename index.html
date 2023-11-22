@@ -8,26 +8,51 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
     />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <title>BP Glass | Traductor Carga Masiva</title>
   </head>
 
   <body>
     <main class="container">
-      <h1>Traductor Renovatek</h1>
-      <div>
-        <textarea
-          id="input_textarea"
-          rows="5"
-          placeholder="Pegar pedido Renovatek"
-        ></textarea>
-        <textarea id="output_textarea" rows="10"></textarea>
-      </div>
+      <header>
+        <h1>Traductor Carga Masiva</h1>
+      </header>
+      <form action="">
+        <!-- selección modo de traducción -->
+        <fieldset>
+          <legend>Modo:</legend>
+          <select>
+            <option value="" selected>Renovatek</option>
+          </select>
+        </fieldset>
 
-      <div>
-        <button id="paste_button">Paste Clipboard</button>
-        <button id="input_button">Process Input</button>
-        <button id="output_button">Copy</button>
-      </div>
+        <!-- entrada y salida de texto -->
+        <fieldset>
+          <textarea
+            id="input_textarea"
+            rows="2"
+            placeholder="Pegar pedido Renovatek"
+          ></textarea>
+          <textarea id="output_textarea" rows="2" readonly></textarea>
+        </fieldset>
+
+        <!-- botones para ejecutar acciones -->
+        <fieldset class="grid">
+          <!-- <button id="paste_button">Paste Clipboard</button> -->
+          <button id="input_button" class="primary">
+            <span style="margin-right: 0.4rem">Traducir</span>
+            <i class="bi bi-translate"></i>
+          </button>
+          <button id="output_button" class="secondary">
+            <span style="margin-right: 0.4rem">Copiar</span>
+            <i class="bi bi-copy"></i>
+          </button>
+        </fieldset>
+      </form>
+      <!-- <footer>Nicolás Órdenes 2023 &#169;</footer> -->
     </main>
   </body>
 </html>

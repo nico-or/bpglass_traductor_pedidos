@@ -84,6 +84,7 @@ const parsePosicionLine = (line) => {
   };
 };
 
+// Campos de la planilla "Carga Masiva"
 /* 
 Cantidad
 Ancho (mm)
@@ -144,10 +145,13 @@ output_button.onclick = () => {
   navigator.clipboard.writeText(output_textarea.value);
 };
 
-document.querySelector("button#paste_button").addEventListener("click", () => {
-  navigator.clipboard.readText().then((text) => {
-    input_textarea.value = text;
-    input_button.click();
-    output_button.click();
-  });
-});
+// Botón para operación completa (pegar+traducir+copiar)
+// Deshabilitado hasta comprobar su necesidad.
+
+// document.querySelector("button#paste_button").addEventListener("click", () => {
+//   navigator.clipboard.readText().then((text) => {
+//     input_textarea.value = text;
+//     input_button.click();
+//     output_button.click();
+//   });
+// });
