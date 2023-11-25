@@ -173,7 +173,7 @@ const writePedido = (pedido) => {
   output[7] = pedido.composicion.separador_1.color;
   // output[8] = pedido.composicion.separador_2?.medida;
   // output[9] = pedido.composicion.separador_2?.color;
-  output[10] = pedido.forma;
+  output[10] = pedido.forma ? "F" : "";
   // output[11] = pedido.palillo;
   // output[12] = pedido.palillo?.verticales;
   // output[13] = pedido.palillo?.horizontales;
