@@ -23,9 +23,12 @@
       <form action="">
         <!-- selección modo de traducción -->
         <fieldset>
-          <legend>Modo:</legend>
-          <select>
-            <option value="" selected>Renovatek</option>
+          <legend>Formato</legend>
+          <select id="mode_selector">
+            <option value="" selected>Seleccione un formato...</option>
+            <option value="rtk1">Renovatek 1 (naranjo)</option>
+            <option value="rtk2">Renovatek 2</option>
+            <option value="bst">Bastro</option>
           </select>
         </fieldset>
 
@@ -36,8 +39,33 @@
             rows="2"
             placeholder="Pegar pedido"
           ></textarea>
-          <textarea id="output_textarea" rows="2" readonly></textarea>
+          <textarea id="output_textarea" rows="2" hidden></textarea>
         </fieldset>
+
+        <figure style="height: 20rem; overflow-y: auto">
+          <table role="grid">
+            <thead>
+              <tr>
+                <th>Cant.</th>
+                <th>Ancho</th>
+                <th>Alto</th>
+                <th>Vid. 1</th>
+                <th>Vid. 2</th>
+                <!-- <th>Vidrio 3</th> -->
+                <th>Sep.</th>
+                <th>Color Sep.</th>
+                <!-- <th>Separador 2</th> -->
+                <!-- <th>Color separador 2</th> -->
+                <th>Forma</th>
+                <!-- <th>Palillo</th> -->
+                <!-- <th>Cantidad verticales</th> -->
+                <!-- <th>Cantidad horizontal</th> -->
+                <th>Ref.</th>
+              </tr>
+            </thead>
+            <tbody id="output_table"></tbody>
+          </table>
+        </figure>
 
         <!-- botones para ejecutar acciones -->
         <fieldset>
@@ -54,8 +82,8 @@
           </div>
         </fieldset>
         <fieldset>
-          <button id="erase_button" class="secondary outline">
-            Borrar
+          <button id="clear_button" class="secondary outline">
+            Limpiar
             <i class="bi bi-eraser"></i>
           </button>
         </fieldset>
