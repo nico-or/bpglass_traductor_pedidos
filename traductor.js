@@ -43,6 +43,7 @@ vidrioMap.set("VS6SIMPLE", "INC 6");
 vidrioMap.set("VS8SIMPLE", "INC 8");
 vidrioMap.set("4SATEN", "SATEN 4");
 vidrioMap.set("SATEN4", "SATEN 4");
+vidrioMap.set("SAT4", "SATEN 4");
 vidrioMap.set("SEMILLA4", "SEMILLA 4");
 vidrioMap.set("4SEMILLA", "SEMILLA 4");
 vidrioMap.set("6LAM", "LAM 6");
