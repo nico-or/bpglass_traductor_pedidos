@@ -15,6 +15,7 @@ separadorMap.set("SEP8BRONCE", { medida: "Sep 7,5", color: "BR OSC" });
 separadorMap.set("SEP10BRONCE", { medida: "Sep 9,5", color: "BR OSC" });
 separadorMap.set("SEP12BRONCE", { medida: "Sep 11,5", color: "BR OSC" });
 separadorMap.set("SEP15BRONCE", { medida: "Sep 14,5", color: "BR OSC" });
+separadorMap.set("SEP17BRONCE", { medida: "Sep 16,5", color: "BR OSC" });
 separadorMap.set("SEP19BRONCE", { medida: "Sep 19,5", color: "BR OSC" });
 separadorMap.set("SEP20BRONCE", { medida: "Sep 19,5", color: "BR OSC" });
 separadorMap.set("SEP6MATE", { medida: "Sep 5,5", color: "MATE" });
