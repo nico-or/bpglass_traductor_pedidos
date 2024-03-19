@@ -276,8 +276,9 @@ const translateRenovatekInput2 = () => {
 const translateBastroInput = () => {
   const input = input_textarea.value
     .split("\n")
+    .filter((line) => line !== "")
     .map(splitOnTab)
-    .filter((array) => array[0] !== "")
+    .filter((array) => array[3] !== "")
     .filter((array) => array[0] !== "Item");
 
   // [0] Item
