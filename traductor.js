@@ -273,6 +273,42 @@ const translateRenovatekInput2 = () => {
   return pedidos;
 };
 
+const translateRenovatekInput3 = () => {
+  const input = input_textarea.value
+    .split("\n")
+    .filter((line) => line !== "")
+    .map(splitOnTab)
+    .filter((array) => array[3] !== "");
+
+  // [0] Referencia Ítem
+  // [1] Cantidad
+  // [2] Ancho (mm)
+  // [3] Largo (mm)
+  // [4] Cristal 1
+  // [5] Cristal 2
+  // [6] Separador
+  // [7] Color Sep
+
+  const pedidos = input.map((array) => {
+    return {
+      referencia: array[0],
+      cantidad: excelString2Number(array[1]),
+      ancho: excelString2Number(array[2]),
+      alto: excelString2Number(array[3]),
+      composicion: {
+        vidrio_1: array[4],
+        vidrio_2: array[5],
+        separador_1: {
+          medida: array[6],
+          color: array[7],
+        },
+      },
+    };
+  });
+
+  return pedidos;
+};
+
 const translateBastroInput = () => {
   const input = input_textarea.value
     .split("\n")
@@ -319,6 +355,9 @@ input_button.addEventListener("click", (e) => {
     case "rtk2":
       pedidos = translateRenovatekInput2();
       break;
+    case "rtk3":
+      pedidos = translateRenovatekInput3();
+      break;
     case "bst":
       pedidos = translateBastroInput();
       break;
@@ -326,10 +365,16 @@ input_button.addEventListener("click", (e) => {
       console.error("not implemented");
       break;
   }
-  output_textarea.value = pedidos.map(writePedido).join("\n");
+
+  const filtered_pedidos = pedidos.filter((pedido) => !isNaN(pedido.cantidad));
+
+  console.log(pedidos);
+  console.log(filtered_pedidos);
+
+  output_textarea.value = filtered_pedidos.map(writePedido).join("\n");
 
   output_table.innerText = "";
-  for (const pedido of pedidos) {
+  for (const pedido of filtered_pedidos) {
     output_table.appendChild(writeTableRow(pedido));
   }
 });
