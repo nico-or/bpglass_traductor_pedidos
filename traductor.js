@@ -368,9 +368,6 @@ input_button.addEventListener("click", (e) => {
 
   const filtered_pedidos = pedidos.filter((pedido) => !isNaN(pedido.cantidad));
 
-  console.log(pedidos);
-  console.log(filtered_pedidos);
-
   output_textarea.value = filtered_pedidos.map(writePedido).join("\n");
 
   output_table.innerText = "";
