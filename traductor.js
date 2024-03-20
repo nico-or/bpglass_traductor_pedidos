@@ -51,6 +51,7 @@ vidrioMap.set("SAT4", "SATEN 4");
 vidrioMap.set("VS4SATEN", "SATEN 4");
 vidrioMap.set("SEMILLA4", "SEMILLA 4");
 vidrioMap.set("4SEMILLA", "SEMILLA 4");
+vidrioMap.set("SEM4", "SEMILLA 4");
 vidrioMap.set("6LAM", "LAM 6");
 vidrioMap.set("8LAM", "LAM 8");
 vidrioMap.set("10LAM", "LAM 10");
