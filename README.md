@@ -1,7 +1,9 @@
 # Traductor Pedidos
+
 Aplicación web para acelear _traducir_ formatos Excel externos al formato interno, acelerando el proceso de ingreso de pedidos.
 
 ## Modo de uso.
+
 1. Abrir el [sitio web](https://nico-or.github.io/bpglass_traductor_pedidos/).
 2. Seleccionar el formato de origen.
 3. Copiar la sección de la planilla correspondiente al pedido.
@@ -11,12 +13,15 @@ Aplicación web para acelear _traducir_ formatos Excel externos al formato inter
 7. Pegar el texto en la planilla _carga masiva_.
 
 ## Todo
-### Mejoras UI/UX.
-  -  Tooltips
-  -  Sección con tutorial
-  -  Layout responsivo
-### Mejoras código
-  - Agregar pruebas
-  - Crear módulos por cliente
-  - Traducir a Typescript/Elm (?)
 
+### Mejoras UI/UX.
+
+- Tooltips
+- Sección con tutorial
+- Layout responsivo
+
+### Mejoras código
+
+- Agregar pruebas
+- Crear módulos por cliente
+- Traducir a Typescript/Elm (?)
