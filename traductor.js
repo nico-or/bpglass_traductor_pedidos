@@ -41,7 +41,7 @@ vidrioMap.set("INC8", "INC 8");
 vidrioMap.set("VS4SIMPLE", "INC 4");
 vidrioMap.set("VS5SIMPLE", "INC 5");
 vidrioMap.set("VS6SIMPLE", "INC 6");
-vidrioMap.set("VS6LAMINADO", "INC 6");
+vidrioMap.set("VS6LAMINADO", "LAM 6");
 vidrioMap.set("VS8SIMPLE", "INC 8");
 vidrioMap.set("VS6", "INC 6");
 vidrioMap.set("VS8", "INC 8");
