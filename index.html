@@ -13,85 +13,128 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
     />
     <title>BP Glass | Traductor Carga Masiva</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex-grow: 1;
+      }
+      footer {
+        text-align: center;
+      }
+      textarea {
+        resize: none;
+      }
+    </style>
   </head>
 
-  <body>
-    <main class="container">
-      <header>
-        <h1>Traductor Carga Masiva</h1>
-      </header>
-      <form action="">
-        <!-- selección modo de traducción -->
-        <fieldset>
-          <legend>Formato</legend>
-          <select id="mode_selector">
-            <option value="" selected>Seleccione un formato...</option>
-            <option value="rtk1">Renovatek 1 (naranjo)</option>
-            <option value="rtk2">Renovatek 2</option>
-            <option value="rtk3">Renovatek 3 (azul)</option>
-            <option value="bst">Bastro</option>
-          </select>
-        </fieldset>
-
-        <!-- entrada y salida de texto -->
-        <fieldset>
-          <textarea
-            id="input_textarea"
-            rows="2"
-            placeholder="Pegar pedido"
-          ></textarea>
-          <textarea id="output_textarea" rows="2" hidden></textarea>
-        </fieldset>
-
-        <figure style="height: 20rem; overflow-y: auto">
-          <table role="grid">
-            <thead>
-              <tr>
-                <th>Cant.</th>
-                <th>Ancho</th>
-                <th>Alto</th>
-                <th>Vid. 1</th>
-                <th>Vid. 2</th>
-                <!-- <th>Vidrio 3</th> -->
-                <th>Sep.</th>
-                <th>Color Sep.</th>
-                <!-- <th>Separador 2</th> -->
-                <!-- <th>Color separador 2</th> -->
-                <th>Forma</th>
-                <!-- <th>Palillo</th> -->
-                <!-- <th>Cantidad verticales</th> -->
-                <!-- <th>Cantidad horizontal</th> -->
-                <th>Ref.</th>
-              </tr>
-            </thead>
-            <tbody id="output_table"></tbody>
-          </table>
-        </figure>
-
-        <!-- botones para ejecutar acciones -->
-        <fieldset>
-          <div class="grid">
-            <!-- <button id="paste_button">Paste Clipboard</button> -->
-            <button id="input_button" class="primary">
-              <span style="margin-right: 0.4rem">Traducir</span>
-              <i class="bi bi-translate"></i>
-            </button>
-            <button id="output_button" class="secondary">
-              <span style="margin-right: 0.4rem">Copiar</span>
-              <i class="bi bi-copy"></i>
-            </button>
+  <body class="container">
+    <nav>
+      <ul>
+        <li>
+          <hgroup>
+            <p>
+              <strong>Traductor Carga Masiva</strong>
+            </p>
+            <p>
+              <small>Este podría ser el fin...</small>
+            </p>
+          </hgroup>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/nico-or/bpglass_traductor_pedidos"
+            class="secondary"
+          >
+            GitHub
+            <i class="bi bi-github"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <!-- Entrada -->
+      <section class="grid">
+        <!-- Lado izquierdo -->
+        <div>
+          <!-- selección modo de traducción -->
+          <div>
+            <select name="format" id="mode_selector">
+              <option value="" selected>Seleccione un formato...</option>
+              <option value="bst">Bastro</option>
+              <option value="rtk1">Renovatek 1 (naranjo)</option>
+              <option value="rtk3">Renovatek 3 (azul)</option>
+              <option value="rtk2">Renovatek 2</option>
+            </select>
           </div>
-        </fieldset>
-        <fieldset>
-          <div class="grid">
-            <button id="clear_button" class="secondary outline">
-              Limpiar
-              <i class="bi bi-eraser"></i>
-            </button>
+          <!-- entrada y salida de texto -->
+          <div>
+            <textarea
+              id="input_textarea"
+              rows="1"
+              placeholder="Pegar pedido"
+            ></textarea>
+            <textarea id="output_textarea" rows="2" hidden></textarea>
           </div>
-        </fieldset>
-      </form>
-      <!-- <footer>Nicolás Órdenes 2023 &#169;</footer> -->
+        </div>
+        <!-- Lado Derecho -->
+        <div>
+          <!-- botones para ejecutar acciones -->
+          <div>
+            <!-- arriba -->
+            <p class="grid">
+              <button id="input_button" class="primary">
+                <span style="margin-right: 0.4rem">Traducir</span>
+                <i class="bi bi-translate"></i>
+              </button>
+              <button id="output_button" class="secondary">
+                <span style="margin-right: 0.4rem">Copiar</span>
+                <i class="bi bi-copy"></i>
+              </button>
+            </p>
+            <!-- abajo -->
+            <p class="grid">
+              <button id="clear_button" class="secondary outline">
+                Limpiar
+                <i class="bi bi-eraser"></i>
+              </button>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Salida -->
+      <section>
+        <table role="grid">
+          <thead>
+            <tr>
+              <th>Cant.</th>
+              <th>Ancho</th>
+              <th>Alto</th>
+              <th>Vid. 1</th>
+              <th>Vid. 2</th>
+              <!-- <th>Vidrio 3</th> -->
+              <th>Sep.</th>
+              <th>Color Sep.</th>
+              <!-- <th>Separador 2</th> -->
+              <!-- <th>Color separador 2</th> -->
+              <th>Forma</th>
+              <!-- <th>Palillo</th> -->
+              <!-- <th>Cantidad verticales</th> -->
+              <!-- <th>Cantidad horizontal</th> -->
+              <th>Ref.</th>
+            </tr>
+          </thead>
+          <tbody id="output_table"></tbody>
+        </table>
+      </section>
     </main>
+    <footer>
+      <div>&copy; 2023-2024 Nicolás Órdenes</div>
+    </footer>
   </body>
 </html>
