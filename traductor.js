@@ -1,65 +1,142 @@
 "use strict";
 
-// separador dictionary
-const separadorMap = new Map();
-separadorMap.set("6", { medida: "Sep 5,5", color: "BR OSC" });
-separadorMap.set("8", { medida: "Sep 7,5", color: "BR OSC" });
-separadorMap.set("10", { medida: "Sep 9,5", color: "BR OSC" });
-separadorMap.set("12", { medida: "Sep 11,5", color: "BR OSC" });
-separadorMap.set("14", { medida: "Sep 14,5", color: "BR OSC" });
-separadorMap.set("15", { medida: "Sep 14,5", color: "BR OSC" });
-separadorMap.set("19", { medida: "Sep 19,5", color: "BR OSC" });
-separadorMap.set("20", { medida: "Sep 19,5", color: "BR OSC" });
-separadorMap.set("SEP6BRONCE", { medida: "Sep 5,5", color: "BR OSC" });
-separadorMap.set("SEP8BRONCE", { medida: "Sep 7,5", color: "BR OSC" });
-separadorMap.set("SEP10BRONCE", { medida: "Sep 9,5", color: "BR OSC" });
-separadorMap.set("SEP12BRONCE", { medida: "Sep 11,5", color: "BR OSC" });
-separadorMap.set("SEP15BRONCE", { medida: "Sep 14,5", color: "BR OSC" });
-separadorMap.set("SEP17BRONCE", { medida: "Sep 16,5", color: "BR OSC" });
-separadorMap.set("SEP19BRONCE", { medida: "Sep 19,5", color: "BR OSC" });
-separadorMap.set("SEP20BRONCE", { medida: "Sep 19,5", color: "BR OSC" });
-separadorMap.set("SEP6MATE", { medida: "Sep 5,5", color: "MATE" });
-separadorMap.set("SEP8MATE", { medida: "Sep 7,5", color: "MATE" });
-separadorMap.set("SEP10MATE", { medida: "Sep 9,5", color: "MATE" });
-separadorMap.set("SEP12MATE", { medida: "Sep 11,5", color: "MATE" });
-separadorMap.set("SEP15MATE", { medida: "Sep 14,5", color: "MATE" });
-separadorMap.set("SEP19MATE", { medida: "Sep 19,5", color: "MATE" });
-separadorMap.set("SEP20MATE", { medida: "Sep 19,5", color: "MATE" });
-separadorMap.set("SEP10SUPERSPACER", { medida: "Sep 9,5", color: "BR OSC" });
-separadorMap.set("SEP12SUPERSPACER", { medida: "Sep 11,5", color: "BR OSC" });
+// Info separadores
+const separadoresData = [
+  {
+    medida: "Sep 5,5",
+    color: "BR OSC",
+    alias: ["6", "SEP6BRONCE"],
+  },
+  {
+    medida: "Sep 7,5",
+    color: "BR OSC",
+    alias: ["8", "SEP8BRONCE"],
+  },
+  {
+    medida: "Sep 9,5",
+    color: "BR OSC",
+    alias: ["10", "SEP10BRONCE", "SEP10SUPERSPACER"],
+  },
+  {
+    medida: "Sep 11,5",
+    color: "BR OSC",
+    alias: ["12", "SEP12BRONCE", "SEP12SUPERSPACER"],
+  },
+  {
+    medida: "Sep 14,5",
+    color: "BR OSC",
+    alias: ["14", "15", "SEP15BRONCE"],
+  },
+  {
+    medida: "Sep 16,5",
+    color: "BR OSC",
+    alias: ["SEP17BRONCE"],
+  },
+  {
+    medida: "Sep 19,5",
+    color: "BR OSC",
+    alias: ["19", "20", "SEP19BRONCE", "SEP20BRONCE"],
+  },
+  {
+    medida: "Sep 5,5",
+    color: "MATE",
+    alias: ["SEP6MATE"],
+  },
+  {
+    medida: "Sep 7,5",
+    color: "MATE",
+    alias: ["SEP8MATE"],
+  },
+  {
+    medida: "Sep 9,5",
+    color: "MATE",
+    alias: ["SEP10MATE"],
+  },
+  {
+    medida: "Sep 11,5",
+    color: "MATE",
+    alias: ["SEP12MATE"],
+  },
+  {
+    medida: "Sep 14,5",
+    color: "MATE",
+    alias: ["SEP15MATE"],
+  },
+  {
+    medida: "Sep 19,5",
+    color: "MATE",
+    alias: ["SEP19MATE", "SEP20MATE"],
+  },
+];
 
-// vidrio dictionary
-const vidrioMap = new Map();
-vidrioMap.set("4", "INC 4");
-vidrioMap.set("5", "INC 5");
-vidrioMap.set("6", "INC 6");
-vidrioMap.set("8", "INC 8");
-vidrioMap.set("INC4", "INC 4");
-vidrioMap.set("INC5", "INC 5");
-vidrioMap.set("INC6", "INC 6");
-vidrioMap.set("INC8", "INC 8");
-vidrioMap.set("VS4SIMPLE", "INC 4");
-vidrioMap.set("VS5SIMPLE", "INC 5");
-vidrioMap.set("VS6SIMPLE", "INC 6");
-vidrioMap.set("VS6LAMINADO", "LAM 6");
-vidrioMap.set("VS8SIMPLE", "INC 8");
-vidrioMap.set("VS6", "INC 6");
-vidrioMap.set("VS8", "INC 8");
-vidrioMap.set("4SATEN", "SATEN 4");
-vidrioMap.set("SATEN4", "SATEN 4");
-vidrioMap.set("SAT4", "SATEN 4");
-vidrioMap.set("VS4SATEN", "SATEN 4");
-vidrioMap.set("SEMILLA4", "SEMILLA 4");
-vidrioMap.set("4SEMILLA", "SEMILLA 4");
-vidrioMap.set("SEM4", "SEMILLA 4");
-vidrioMap.set("6LAM", "LAM 6");
-vidrioMap.set("8LAM", "LAM 8");
-vidrioMap.set("10LAM", "LAM 10");
-vidrioMap.set("LAM6", "LAM 6");
-vidrioMap.set("LAM8", "LAM 8");
-vidrioMap.set("LAM10", "LAM 10");
-vidrioMap.set("LAMACU6", "LAM ACU6");
-vidrioMap.set("LAMACU8", "LAM ACU8");
+// Info cristales
+const cristalesData = [
+  {
+    cargaMasiva: "INC 3",
+    alias: ["3", "INC3", "VS3SIMPLE", "VS3", "FLT3", "FLOAT3"],
+  },
+  {
+    cargaMasiva: "INC 4",
+    alias: ["4", "INC4", "VS4SIMPLE", "VS4", "FLT4", "FLOAT4"],
+  },
+  {
+    cargaMasiva: "INC 5",
+    alias: ["5", "INC5", "VS5SIMPLE", "VS5", "FLT5", "FLOAT5"],
+  },
+  {
+    cargaMasiva: "INC 6",
+    alias: ["6", "INC6", "VS6SIMPLE", "VS6", "FLT6", "FLOAT6"],
+  },
+  {
+    cargaMasiva: "INC 8",
+    alias: ["8", "INC8", "VS8SIMPLE", "VS8", "FLT8", "FLOAT8"],
+  },
+  {
+    cargaMasiva: "SATEN 4",
+    alias: ["4SATEN", "SATEN4", "SAT4", "VS4SATEN"],
+  },
+  {
+    cargaMasiva: "SEMILLA 4",
+    alias: ["SEMILLA4", "4SEMILLA", "SEM4"],
+  },
+  {
+    cargaMasiva: "LAM 6",
+    alias: ["6LAM", "LAM6", "VS6LAMINADO"],
+  },
+  {
+    cargaMasiva: "LAM 8",
+    alias: ["8LAM", "LAM8"],
+  },
+  {
+    cargaMasiva: "LAM 10",
+    alias: ["10LAM", "LAM10"],
+  },
+  {
+    cargaMasiva: "LAM 12",
+    alias: ["12LAM", "LAM12"],
+  },
+  {
+    cargaMasiva: "LAM ACU6",
+    alias: ["LAMACU6", "LAM6ACU"],
+  },
+  {
+    cargaMasiva: "LAM ACU8",
+    alias: ["LAMACU8", "LAM8ACU"],
+  },
+];
+
+// Build alias hash maps
+function reverseAlias(list) {
+  return list.reduce((acc, e) => {
+    e.alias.forEach((alias) => {
+      acc[alias] = e;
+    });
+    return acc;
+  }, {});
+}
+
+const cristalMap = reverseAlias(cristalesData);
+const separadorMap = reverseAlias(separadoresData);
 
 // get relevant elements
 const input_textarea = document.querySelector("#input_textarea");
@@ -115,18 +192,18 @@ const lineHasQuantity = (line) => {
 // helper functions
 const findSeparador = (input) => {
   let str = normalizeString(input);
-  let separador = separadorMap.get(str);
-  if (separador === undefined) {
-    return { medida: "", color: "" };
-  } else {
-    return separador;
-  }
+  const nullSeparador = {
+    medida: "",
+    color: "",
+    alias: [],
+  };
+  return separadorMap[str] || nullSeparador;
 };
 
 const findVidrio = (input) => {
   let str = normalizeString(input);
-  let vidrio = vidrioMap.get(str);
-  return vidrio === undefined ? "" : vidrio;
+  let vidrio = cristalMap[str];
+  return vidrio?.cargaMasiva || "";
 };
 
 // splits composicion line (ex: "4/10/4 SATEN")
@@ -350,13 +427,10 @@ input_button.addEventListener("click", (e) => {
   e.preventDefault();
   let pedidos = [];
   switch (mode_selector.value) {
-    case "rtk1":
+    case "rtk_nar":
       pedidos = translateRenovatekInput1();
       break;
-    case "rtk2":
-      pedidos = translateRenovatekInput2();
-      break;
-    case "rtk3":
+    case "rtk_azu":
       pedidos = translateRenovatekInput3();
       break;
     case "bst":
