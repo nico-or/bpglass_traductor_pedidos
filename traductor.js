@@ -449,6 +449,11 @@ input_button.addEventListener("click", (e) => {
   for (const pedido of filtered_pedidos) {
     output_table.appendChild(writeTableRow(pedido));
   }
+
+  umami.track("translate_action", {
+    position_count: filtered_pedidos.length,
+    mode: mode_selector.value,
+  });
 });
 
 output_button.addEventListener("click", (event) => {
