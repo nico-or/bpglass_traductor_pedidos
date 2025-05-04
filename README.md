@@ -1,6 +1,6 @@
 # Traductor Pedidos
 
-Aplicación web para acelear _traducir_ formatos Excel externos al formato interno, acelerando el proceso de ingreso de pedidos.
+Aplicación web para traducir formatos Excel externos al formato interno, acelerando el proceso de ingreso de pedidos.
 
 ## Modo de uso.
 
@@ -23,5 +23,4 @@ Aplicación web para acelear _traducir_ formatos Excel externos al formato inter
 ### Mejoras código
 
 - Agregar pruebas
-- Crear módulos por cliente
 - Traducir a Typescript/Elm (?)
