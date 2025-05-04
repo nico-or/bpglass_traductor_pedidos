@@ -17,3 +17,27 @@ describe("normalizeString", () => {
     expect(normalizeString("SEP. 12 Bronce")).toBe("SEP12BRONCE");
   });
 });
+
+describe("excelString2Number", () => {
+  test("works with es number format", () => {
+    expect(excelString2Number("1.000,5")).toBe(1001);
+  });
+  test("works with en number format", () => {
+    expect(excelString2Number("1,000.5")).toBe(1001);
+  });
+  test("works with es number format with spaces", () => {
+    expect(excelString2Number("1.000 , 5")).toBe(1001);
+  });
+  test("works with en number format with spaces", () => {
+    expect(excelString2Number("1, 000 . 5")).toBe(1001);
+  });
+  test("works with integer es number format", () => {
+    expect(excelString2Number("1.000")).toBe(1000);
+  });
+  test("works with integer en number format", () => {
+    expect(excelString2Number("1,000")).toBe(1000);
+  });
+  test("works with small integers numbers", () => {
+    expect(excelString2Number("15")).toBe(15);
+  });
+});
