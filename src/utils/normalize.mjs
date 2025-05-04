@@ -3,8 +3,8 @@ export function normalizeString(str) {
   return str
     .toUpperCase()
     .normalize("NFD") // Normalize diacritics to remove accents
-    .replace(/[\u0300-\u036f]/g, "") // Remove remaining diacritic marks
-    .replace(/[\., ]/g, ""); // Remove commas and spaces
+    .replace(/[^A-Z0-9]/g, "") // Remove non-alphanumeric characters
+    .replace(/(?<![0-9])0/g, ""); // Remove leading zeros not preceded by another digit
 }
 
 export function isUsefulValue(val) {
