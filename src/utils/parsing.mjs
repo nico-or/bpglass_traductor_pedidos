@@ -13,7 +13,7 @@ export function findVidrio(input) {
 
 export function findSeparador(input) {
   const norm = normalizeString(input);
-  return separadorMap[norm] || { medida: "", color: "", alias: [] };
+  return separadorMap[norm];
 }
 
 // splits composicion line (ex: "4/10/4 SATEN")

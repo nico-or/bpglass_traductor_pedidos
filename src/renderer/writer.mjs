@@ -23,10 +23,10 @@ export function writePedido(pedido) {
     pedido.composicion.vidrio_1,
     pedido.composicion.vidrio_2,
     pedido.composicion.vidrio_3,
-    pedido.composicion.separador_1.medida,
-    pedido.composicion.separador_1.color,
-    "", // pedido.composicion.separador_2?.medida;
-    "", // pedido.composicion.separador_2?.color;
+    pedido.composicion.separador_1?.medida,
+    pedido.composicion.separador_1?.color,
+    pedido.composicion.separador_2?.medida,
+    pedido.composicion.separador_2?.color,
     pedido.forma ? "F" : "",
     "", // pedido.palillo,
     "", // pedido.palillo?.verticales;
