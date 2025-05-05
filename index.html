@@ -1,134 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="traductor.js" defer></script>
+    <script
+      async
+      defer
+      src="analytics.js"
+      data-website-id="5b4bc221-3e98-4848-9175-71c5fe738d5f"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <title>BP Glass | Traductor Carga Masiva</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="traductor.js" defer></script>
-  <script async defer src="/analytics.js" data-website-id="5b4bc221-3e98-4848-9175-71c5fe738d5f"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
-  <title>BP Glass | Traductor Carga Masiva</title>
-  <style>
-    body {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+      main {
+        flex-grow: 1;
+      }
 
-    main {
-      flex-grow: 1;
-    }
+      footer {
+        text-align: center;
+      }
 
-    footer {
-      text-align: center;
-    }
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
 
-    textarea {
-      resize: none;
-    }
-  </style>
-</head>
-
-<body class="container">
-  <nav>
-    <ul>
-      <li>
-        <hgroup>
-          <p>
-            <strong>Traductor Carga Masiva</strong>
-          </p>
-          <p>
-            <small>Este podría ser el fin...</small>
-          </p>
-        </hgroup>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a href="https://github.com/nico-or/bpglass_traductor_pedidos" class="secondary">
-          GitHub
-          <i class="bi bi-github"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <main>
-    <!-- Entrada -->
-    <section class="grid">
-      <!-- Lado izquierdo -->
-      <div>
-        <!-- selección modo de traducción -->
+  <body class="container">
+    <nav>
+      <ul>
+        <li>
+          <hgroup>
+            <p>
+              <strong>Traductor Carga Masiva</strong>
+            </p>
+            <p>
+              <small>Este podría ser el fin...</small>
+            </p>
+          </hgroup>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/nico-or/bpglass_traductor_pedidos"
+            class="secondary"
+          >
+            GitHub
+            <i class="bi bi-github"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <!-- Entrada -->
+      <section class="grid">
+        <!-- Lado izquierdo -->
         <div>
-          <select name="format" id="mode_selector">
-            <option value="" selected>
-              Seleccione un formato...
-            </option>
-            <option value="bst">Bastro</option>
-            <option value="rtk_nar">Renovatek (naranjo)</option>
-            <option value="rtk_azu">Renovatek (azul)</option>
-          </select>
+          <!-- selección modo de traducción -->
+          <div>
+            <select name="format" id="mode_selector">
+              <option value="" selected>Seleccione un formato...</option>
+              <option value="bst">Bastro</option>
+              <option value="rtk_nar">Renovatek (naranjo)</option>
+              <option value="rtk_azu">Renovatek (azul)</option>
+            </select>
+          </div>
+          <!-- entrada y salida de texto -->
+          <div>
+            <textarea
+              id="input_textarea"
+              rows="1"
+              placeholder="Pegar pedido"
+            ></textarea>
+            <textarea id="output_textarea" rows="2" hidden></textarea>
+          </div>
         </div>
-        <!-- entrada y salida de texto -->
+        <!-- Lado Derecho -->
         <div>
-          <textarea id="input_textarea" rows="1" placeholder="Pegar pedido"></textarea>
-          <textarea id="output_textarea" rows="2" hidden></textarea>
+          <!-- botones para ejecutar acciones -->
+          <div>
+            <!-- arriba -->
+            <p class="grid">
+              <button id="input_button" class="primary">
+                <span style="margin-right: 0.4rem">Traducir</span>
+                <i class="bi bi-translate"></i>
+              </button>
+              <button id="output_button" class="secondary">
+                <span style="margin-right: 0.4rem">Copiar</span>
+                <i class="bi bi-copy"></i>
+              </button>
+            </p>
+            <!-- abajo -->
+            <p class="grid">
+              <button id="clear_button" class="secondary outline">
+                Limpiar
+                <i class="bi bi-eraser"></i>
+              </button>
+            </p>
+          </div>
         </div>
-      </div>
-      <!-- Lado Derecho -->
-      <div>
-        <!-- botones para ejecutar acciones -->
-        <div>
-          <!-- arriba -->
-          <p class="grid">
-            <button id="input_button" class="primary">
-              <span style="margin-right: 0.4rem">Traducir</span>
-              <i class="bi bi-translate"></i>
-            </button>
-            <button id="output_button" class="secondary">
-              <span style="margin-right: 0.4rem">Copiar</span>
-              <i class="bi bi-copy"></i>
-            </button>
-          </p>
-          <!-- abajo -->
-          <p class="grid">
-            <button id="clear_button" class="secondary outline">
-              Limpiar
-              <i class="bi bi-eraser"></i>
-            </button>
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- Salida -->
-    <section>
-      <table role="grid">
-        <thead>
-          <tr>
-            <th>Cant.</th>
-            <th>Ancho</th>
-            <th>Alto</th>
-            <th>Vid. 1</th>
-            <th>Vid. 2</th>
-            <!-- <th>Vidrio 3</th> -->
-            <th>Sep.</th>
-            <th>Color Sep.</th>
-            <!-- <th>Separador 2</th> -->
-            <!-- <th>Color separador 2</th> -->
-            <th>Forma</th>
-            <!-- <th>Palillo</th> -->
-            <!-- <th>Cantidad verticales</th> -->
-            <!-- <th>Cantidad horizontal</th> -->
-            <th>Ref.</th>
-          </tr>
-        </thead>
-        <tbody id="output_table"></tbody>
-      </table>
-    </section>
-  </main>
-  <footer>
-    <div>&copy; 2023-2024 Nicolás Órdenes</div>
-  </footer>
-</body>
-
+      </section>
+      <!-- Salida -->
+      <section>
+        <table role="grid">
+          <thead>
+            <tr>
+              <th>Cant.</th>
+              <th>Ancho</th>
+              <th>Alto</th>
+              <th>Vid. 1</th>
+              <th>Vid. 2</th>
+              <!-- <th>Vidrio 3</th> -->
+              <th>Sep.</th>
+              <th>Color Sep.</th>
+              <!-- <th>Separador 2</th> -->
+              <!-- <th>Color separador 2</th> -->
+              <th>Forma</th>
+              <!-- <th>Palillo</th> -->
+              <!-- <th>Cantidad verticales</th> -->
+              <!-- <th>Cantidad horizontal</th> -->
+              <th>Ref.</th>
+            </tr>
+          </thead>
+          <tbody id="output_table"></tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <div>&copy; 2023-2025 Nicolás Órdenes</div>
+    </footer>
+  </body>
 </html>
