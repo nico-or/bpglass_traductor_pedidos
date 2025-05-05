@@ -9,5 +9,8 @@ export default defineConfig({
   },
   test: {
     include: ["./test/**/*.test.{js,ts,mjs,mts}"],
+    coverage: {
+      provider: "v8",
+    },
   },
 });
