@@ -4,6 +4,7 @@
   "description": "Aplicación web para traducir formatos Excel externos al formato interno, acelerando el proceso de ingreso de pedidos.",
   "main": "src/main.js",
   "devDependencies": {
+    "@vitest/coverage-v8": "^3.1.2",
     "vitest": "^3.1.2"
   },
   "scripts": {
