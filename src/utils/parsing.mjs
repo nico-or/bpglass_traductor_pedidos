@@ -8,7 +8,7 @@ const separadorMap = reverseAlias(separadoresData);
 
 export function findVidrio(input) {
   const norm = normalizeString(input);
-  return cristalMap[norm]?.cargaMasiva || "";
+  return cristalMap[norm]?.cargaMasiva;
 }
 
 export function findSeparador(input) {
