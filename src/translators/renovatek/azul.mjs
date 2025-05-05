@@ -1,4 +1,4 @@
-import { excelString2Number } from "../utils/normalize.mjs";
+import { excelString2Number } from "../../utils/normalize.mjs";
 
 // Input format:
 // [0] Referencia Ítem
@@ -10,7 +10,7 @@ import { excelString2Number } from "../utils/normalize.mjs";
 // [6] Separador
 // [7] Color Sep
 
-export function translateRenovatekInput3(inputText) {
+export default function translate(inputText) {
   const input = inputText
     .split("\n")
     .filter((line) => line !== "")
