@@ -1,7 +1,4 @@
-import { translateRenovatekInput1 } from "./translators/renovatek1.mjs";
-import { translateRenovatekInput2 } from "./translators/renovatek2.mjs";
-import { translateRenovatekInput3 } from "./translators/renovatek3.mjs";
-import { translateBastroInput } from "./translators/bastro.mjs";
+import { translators } from "./translators/index.mjs";
 import { writePedido } from "./renderer/writer.mjs";
 import { writeTableRow } from "./renderer/table.mjs";
 
@@ -15,23 +12,16 @@ const output_table = document.querySelector("#output_table");
 
 input_button.addEventListener("click", (e) => {
   e.preventDefault();
-  let pedidos = [];
   const input = input_textarea.value;
+  const mode = mode_selector.value;
+  const translator = translators[mode];
 
-  switch (mode_selector.value) {
-    case "rtk_nar":
-      pedidos = translateRenovatekInput1(input);
-      break;
-    case "rtk_azu":
-      pedidos = translateRenovatekInput3(input);
-      break;
-    case "bst":
-      pedidos = translateBastroInput(input);
-      break;
-    default:
-      console.error("not implemented");
-      return;
+  if (!translator) {
+    console.error("No translator found for mode:", mode);
+    return;
   }
+
+  const pedidos = translator(input);
 
   const filtered = pedidos.filter((p) => !isNaN(p.cantidad));
 

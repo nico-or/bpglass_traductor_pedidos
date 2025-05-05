@@ -1,5 +1,5 @@
-import { parseComposicionLine } from "../utils/parsing.mjs";
-import { excelString2Number } from "../utils/normalize.mjs";
+import { parseComposicionLine } from "../../utils/parsing.mjs";
+import { excelString2Number } from "../../utils/normalize.mjs";
 
 // Input format:
 // [0] referencia
@@ -15,7 +15,7 @@ import { excelString2Number } from "../utils/normalize.mjs";
 // [10]
 // [11] alto
 
-export function translateRenovatekInput1(inputText) {
+export default function translate(inputText) {
   const lines = inputText
     .split("\n")
     .map((line) => line.split("\t"))

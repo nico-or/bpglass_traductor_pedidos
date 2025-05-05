@@ -1,5 +1,5 @@
-import { normalizeString, excelString2Number } from "../utils/normalize.mjs";
-import { findVidrio, findSeparador } from "../utils/parsing.mjs";
+import { normalizeString, excelString2Number } from "../../utils/normalize.mjs";
+import { findVidrio, findSeparador } from "../../utils/parsing.mjs";
 
 // Input format:
 // [0] Item
@@ -11,7 +11,7 @@ import { findVidrio, findSeparador } from "../utils/parsing.mjs";
 // [6] Cristal 2
 // [7] Separador
 
-export function translateBastroInput(inputText) {
+export default function translate(inputText) {
   const lines = inputText
     .split("\n")
     .filter((line) => line !== "")
