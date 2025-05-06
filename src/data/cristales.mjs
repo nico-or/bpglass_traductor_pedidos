@@ -1,54 +1,61 @@
+import {
+  aliasIncoloro,
+  aliasLaminado,
+  aliasLaminadoAcustico,
+  aliasSaten,
+} from "./generator.mjs";
+
 export const cristalesData = [
   {
     cargaMasiva: "INC 3",
-    alias: ["3", "INC3", "VS3SIMPLE", "VS3", "FLT3", "FLOAT3"],
+    alias: aliasIncoloro(3),
   },
   {
     cargaMasiva: "INC 4",
-    alias: ["4", "INC4", "VS4SIMPLE", "VS4", "FLT4", "FLOAT4"],
+    alias: aliasIncoloro(4),
   },
   {
     cargaMasiva: "INC 5",
-    alias: ["5", "INC5", "VS5SIMPLE", "VS5", "FLT5", "FLOAT5"],
+    alias: aliasIncoloro(5),
   },
   {
     cargaMasiva: "INC 6",
-    alias: ["6", "INC6", "VS6SIMPLE", "VS6", "FLT6", "FLOAT6"],
+    alias: aliasIncoloro(6),
   },
   {
     cargaMasiva: "INC 8",
-    alias: ["8", "INC8", "VS8SIMPLE", "VS8", "FLT8", "FLOAT8"],
+    alias: aliasIncoloro(8),
   },
   {
     cargaMasiva: "SATEN 4",
-    alias: ["4SATEN", "SATEN4", "SAT4", "VS4SATEN"],
+    alias: aliasSaten(4),
   },
   {
     cargaMasiva: "SEMILLA 4",
-    alias: ["SEMILLA4", "4SEMILLA", "SEM4"],
+    alias: ["SEMILLA4", "4SEMILLA", "SEM4", "4SEM"],
   },
   {
     cargaMasiva: "LAM 6",
-    alias: ["6LAM", "LAM6", "VS6LAMINADO"],
+    alias: aliasLaminado(6),
   },
   {
     cargaMasiva: "LAM 8",
-    alias: ["8LAM", "LAM8"],
+    alias: aliasLaminado(8),
   },
   {
     cargaMasiva: "LAM 10",
-    alias: ["10LAM", "LAM10"],
+    alias: aliasLaminado(10),
   },
   {
     cargaMasiva: "LAM 12",
-    alias: ["12LAM", "LAM12"],
+    alias: aliasLaminado(12),
   },
   {
     cargaMasiva: "LAM ACU6",
-    alias: ["LAMACU6", "LAM6ACU"],
+    alias: aliasLaminadoAcustico(6),
   },
   {
     cargaMasiva: "LAM ACU8",
-    alias: ["LAMACU8", "LAM8ACU"],
+    alias: aliasLaminadoAcustico(8),
   },
 ];
