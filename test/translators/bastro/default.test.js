@@ -12,7 +12,7 @@ describe("translate function", () => {
         alto: 1469,
         composicion: {
           vidrio_1: "INC 5",
-          vidrio_2: undefined, // currently missing cristales.mjs entry.
+          vidrio_2: "BR 5",
           vidrio_3: undefined,
           separador_1: {
             color: "BR OSC",

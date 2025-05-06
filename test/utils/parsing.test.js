@@ -94,4 +94,24 @@ describe("findVidrio", () => {
       expect(findVidrio(input)).toBe(expected);
     });
   });
+
+  describe("Bronce notation", () => {
+    test("BR 6 should return BRONCE 6", () => {
+      const input = "BR 6";
+      const expected = "BR 6";
+      expect(findVidrio(input)).toBe(expected);
+    });
+
+    test("BRC5 should return BRONCE 5", () => {
+      const input = "BRC5";
+      const expected = "BR 5";
+      expect(findVidrio(input)).toBe(expected);
+    });
+
+    test("BRONCE 4 should return BRONCE 4", () => {
+      const input = "BR 4";
+      const expected = "BR 4";
+      expect(findVidrio(input)).toBe(expected);
+    });
+  });
 });

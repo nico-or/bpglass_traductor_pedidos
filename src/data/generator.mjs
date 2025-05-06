@@ -56,3 +56,14 @@ export function aliasSaten(number) {
     `VS${number}SATEN`,
   ].flat();
 }
+
+export function aliasBronce(number) {
+  return [
+    `BR${number}`,
+    `${number}BR`,
+    `BRC${number}`,
+    `${number}BRC`,
+    `BRONCE${number}`,
+    `${number}BRONCE`,
+  ].flat();
+}
