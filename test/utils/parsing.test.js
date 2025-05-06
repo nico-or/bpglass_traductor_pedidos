@@ -114,4 +114,12 @@ describe("findVidrio", () => {
       expect(findVidrio(input)).toBe(expected);
     });
   });
+
+  describe("LOWE notation", () => {
+    test("LOW-E 6 should return LOWE 6", () => {
+      const input = "LOW-E 6";
+      const expected = "LOWE 6";
+      expect(findVidrio(input)).toBe(expected);
+    });
+  });
 });
