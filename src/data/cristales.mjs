@@ -58,4 +58,12 @@ export const cristalesData = [
     cargaMasiva: "LAM ACU8",
     alias: aliasLaminadoAcustico(8),
   },
+  {
+    cargaMasiva: "LAM ACU10",
+    alias: aliasLaminadoAcustico(10),
+  },
+  {
+    cargaMasiva: "LAM ACU12",
+    alias: aliasLaminadoAcustico(12),
+  },
 ];
