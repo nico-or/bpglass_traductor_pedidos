@@ -27,13 +27,16 @@ export default function translate(inputText) {
     ancho: excelString2Number(arr[9]),
     alto: excelString2Number(arr[11]),
     composicion: parseComposicionLine(arr[4]),
+    forma: false,
   }));
 
   const odd = pedidos.filter((_, i) => i % 2 === 0);
   const even = pedidos.filter((_, i) => i % 2 !== 0);
 
   odd.forEach((o, i) => {
-    o.referencia += " " + (even[i]?.referencia || "");
+    if (even[i].referencia !== "") {
+      o.referencia += " " + even[i].referencia;
+    }
   });
 
   return odd;
