@@ -67,3 +67,7 @@ export function aliasBronce(number) {
     `${number}BRONCE`,
   ].flat();
 }
+
+export function aliasLowe(number) {
+  return [`LOWE${number}`, `${number}LOWE`].flat();
+}

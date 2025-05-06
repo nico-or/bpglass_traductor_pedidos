@@ -4,6 +4,7 @@ import {
   aliasLaminadoAcustico,
   aliasSaten,
   aliasBronce,
+  aliasLowe,
 } from "./generator.mjs";
 
 export const cristalesData = [
@@ -86,5 +87,21 @@ export const cristalesData = [
   {
     cargaMasiva: "BR 10",
     alias: aliasBronce(10),
+  },
+  {
+    cargaMasiva: "LOWE 3",
+    alias: aliasLowe(3),
+  },
+  {
+    cargaMasiva: "LOWE 4",
+    alias: aliasLowe(4),
+  },
+  {
+    cargaMasiva: "LOWE 5",
+    alias: aliasLowe(5),
+  },
+  {
+    cargaMasiva: "LOWE 6",
+    alias: aliasLowe(6),
   },
 ];
