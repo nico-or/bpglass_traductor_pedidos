@@ -18,10 +18,12 @@ export function findSeparador(input) {
 
 // splits composicion line (ex: "4/10/4 SATEN")
 export function parseComposicionLine(line) {
-  const [v1, sep, v2] = line.split("/");
+  const [v1, sep1, v2, sep2, v3] = line.split("/");
   return {
     vidrio_1: findVidrio(v1),
     vidrio_2: findVidrio(v2),
-    separador_1: findSeparador(sep),
+    vidrio_3: findVidrio(v3),
+    separador_1: findSeparador(sep1),
+    separador_2: findSeparador(sep2),
   };
 }
