@@ -1,4 +1,4 @@
-export function aliasIncoloro(number) {
+export function aliasIncoloro(number: number): string[] {
   return [
     number.toString(),
     `INC${number}`,
@@ -14,7 +14,7 @@ export function aliasIncoloro(number) {
   ].flat();
 }
 
-export function aliasLaminado(number) {
+export function aliasLaminado(number: number): string[] {
   return [
     `LAM${number}`,
     `${number}LAM`,
@@ -32,7 +32,7 @@ export function aliasLaminado(number) {
   ].flat();
 }
 
-export function aliasLaminadoAcustico(number) {
+export function aliasLaminadoAcustico(number: number): string[] {
   return [
     `LAM${number}ACU`,
     `LAMACU${number}`,
@@ -46,7 +46,7 @@ export function aliasLaminadoAcustico(number) {
   ].flat();
 }
 
-export function aliasSaten(number) {
+export function aliasSaten(number: number): string[] {
   return [
     `SATEN${number}`,
     `${number}SATEN`,
@@ -57,7 +57,7 @@ export function aliasSaten(number) {
   ].flat();
 }
 
-export function aliasBronce(number) {
+export function aliasBronce(number: number): string[] {
   return [
     `BR${number}`,
     `${number}BR`,
@@ -68,6 +68,6 @@ export function aliasBronce(number) {
   ].flat();
 }
 
-export function aliasLowe(number) {
+export function aliasLowe(number: number): string[] {
   return [`LOWE${number}`, `${number}LOWE`].flat();
 }

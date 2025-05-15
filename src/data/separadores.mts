@@ -1,4 +1,6 @@
-export const separadoresData = [
+import type { Separador } from "../types/separador.ts";
+
+export const separadoresData: Separador[] = [
   {
     medida: "Sep 5,5",
     color: "BR OSC",

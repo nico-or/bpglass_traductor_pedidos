@@ -1,3 +1,5 @@
+import type { Cristal } from "../types/cristal.ts";
+
 import {
   aliasIncoloro,
   aliasLaminado,
@@ -7,7 +9,7 @@ import {
   aliasLowe,
 } from "./generator.mjs";
 
-export const cristalesData = [
+export const cristalesData: Cristal[] = [
   {
     cargaMasiva: "INC 3",
     alias: aliasIncoloro(3),
