@@ -39,8 +39,6 @@ export function aliasLaminadoAcustico(number: number): string[] {
     `${number}LAMACU`,
     `LAMINADOACU${number}`,
     `${number}LAMINADOACU`,
-    `LAMINADOACU${number}`,
-    `${number}LAMINADOACU`,
     `LAMINADOACUSTICO${number}`,
     `${number}LAMINADOACUSTICO`,
   ].flat();
