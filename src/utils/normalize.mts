@@ -1,4 +1,4 @@
-export function normalizeString(str) {
+export function normalizeString(str: string): string {
   if (!isUsefulValue(str)) return "";
   return str
     .toUpperCase()
@@ -7,12 +7,12 @@ export function normalizeString(str) {
     .replace(/(?<![0-9])0/g, ""); // Remove leading zeros not preceded by another digit
 }
 
-export function isUsefulValue(val) {
+export function isUsefulValue(val: string): boolean {
   return val !== null && val !== undefined && val !== "";
 }
 
 // transforms a string number like 1.000,5 to 1001
-export function excelString2Number(input) {
+export function excelString2Number(input: string): number {
   const str = input.replace(/[^0-9.,]/g, "");
 
   const hasComma = str.includes(",");
