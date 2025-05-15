@@ -11,8 +11,8 @@ describe("translate function", () => {
         ancho: 1094,
         alto: 1469,
         composicion: {
-          vidrio_1: "INC 5",
-          vidrio_2: "BR 5",
+          vidrio_1: { cargaMasiva: "INC 5" },
+          vidrio_2: { cargaMasiva: "BR 5" },
           vidrio_3: undefined,
           separador_1: {
             color: "BR OSC",
@@ -35,8 +35,8 @@ describe("translate function", () => {
         ancho: undefined,
         alto: undefined,
         composicion: {
-          vidrio_1: "INC 5",
-          vidrio_2: "INC 5",
+          vidrio_1: { cargaMasiva: "INC 5" },
+          vidrio_2: { cargaMasiva: "INC 5" },
           vidrio_3: undefined,
           separador_1: {
             color: "BR OSC",
@@ -59,7 +59,7 @@ describe("translate function", () => {
         ancho: 959,
         alto: 862,
         composicion: {
-          vidrio_1: "INC 5",
+          vidrio_1: { cargaMasiva: "INC 5" },
           vidrio_2: undefined,
           vidrio_3: undefined,
           separador_1: undefined,
@@ -80,7 +80,7 @@ describe("translate function", () => {
         ancho: undefined,
         alto: undefined,
         composicion: {
-          vidrio_1: "INC 5",
+          vidrio_1: { cargaMasiva: "INC 5" },
           vidrio_2: undefined,
           vidrio_3: undefined,
           separador_1: undefined,

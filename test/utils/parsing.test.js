@@ -5,8 +5,8 @@ describe("parseComposicionLine", () => {
   test("double glassed window composition (v1/sep1/v2)", () => {
     const input = "5/10/6LAM";
     const expected = {
-      vidrio_1: "INC 5",
-      vidrio_2: "LAM 6",
+      vidrio_1: { cargaMasiva: "INC 5" },
+      vidrio_2: { cargaMasiva: "LAM 6" },
       vidrio_3: undefined,
       separador_1: {
         color: "BR OSC",
@@ -20,9 +20,9 @@ describe("parseComposicionLine", () => {
   test("triple glassed window composition (v1/sep1/v2/sep2/v3)", () => {
     const input = "5/10/6LAM/10/4";
     const expected = {
-      vidrio_1: "INC 5",
-      vidrio_2: "LAM 6",
-      vidrio_3: "INC 4",
+      vidrio_1: { cargaMasiva: "INC 5" },
+      vidrio_2: { cargaMasiva: "LAM 6" },
+      vidrio_3: { cargaMasiva: "INC 4" },
       separador_1: {
         color: "BR OSC",
         medida: "Sep 9,5",
@@ -39,14 +39,14 @@ describe("parseComposicionLine", () => {
 describe("findVidrio", () => {
   test("with valid vidrio alias", () => {
     const input = "INC 4";
-    const expected = "INC 4";
-    expect(findVidrio(input)).toBe(expected);
+    const expected = { cargaMasiva: "INC 4" };
+    expect(findVidrio(input)).toMatchObject(expected);
   });
 
   test("with invalid characters", () => {
     const input = " Fl!t@# 6 ";
-    const expected = "INC 6";
-    expect(findVidrio(input)).toBe(expected);
+    const expected = { cargaMasiva: "INC 6" };
+    expect(findVidrio(input)).toMatchObject(expected);
   });
 
   test("with missing vidrio alias", () => {
@@ -58,68 +58,68 @@ describe("findVidrio", () => {
   describe("laminados", () => {
     test("lam 8 seg should return LAM 8", () => {
       const input = "LAM 8 seg";
-      const expected = "LAM 8";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "LAM 8" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
 
     test("lam acu 6 should return LAM ACU6", () => {
       const input = "LAM ACU 6";
-      const expected = "LAM ACU6";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "LAM ACU6" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
 
     test("lam 8 acu should return LAM ACU8", () => {
       const input = "LAM 8 acu";
-      const expected = "LAM ACU8";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "LAM ACU8" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
   });
 
   describe("Renovatek dimensionado notation", () => {
     test("VS4 should return INC 4", () => {
       const input = "VS4";
-      const expected = "INC 4";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "INC 4" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
 
     test("VS6SIMPLE should return INC 6", () => {
       const input = "VS6SIMPLE";
-      const expected = "INC 6";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "INC 6" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
 
     test("VS6LAMINADO should return LAM 6", () => {
       const input = "VS6LAMINADO";
-      const expected = "LAM 6";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "LAM 6" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
   });
 
   describe("Bronce notation", () => {
     test("BR 6 should return BRONCE 6", () => {
       const input = "BR 6";
-      const expected = "BR 6";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "BR 6" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
 
     test("BRC5 should return BRONCE 5", () => {
       const input = "BRC5";
-      const expected = "BR 5";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "BR 5" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
 
     test("BRONCE 4 should return BRONCE 4", () => {
       const input = "BR 4";
-      const expected = "BR 4";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "BR 4" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
   });
 
   describe("LOWE notation", () => {
     test("LOW-E 6 should return LOWE 6", () => {
       const input = "LOW-E 6";
-      const expected = "LOWE 6";
-      expect(findVidrio(input)).toBe(expected);
+      const expected = { cargaMasiva: "LOWE 6" };
+      expect(findVidrio(input)).toMatchObject(expected);
     });
   });
 });

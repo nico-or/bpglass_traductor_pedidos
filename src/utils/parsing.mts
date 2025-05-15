@@ -9,10 +9,9 @@ import { Composicion } from "../types/composicion";
 const cristalMap = reverseAlias(cristalesData);
 const separadorMap = reverseAlias(separadoresData);
 
-// TODO: Refactor to return a Cristal object instead of a string
-export function findVidrio(input: string): string {
+export function findVidrio(input: string): Cristal {
   const norm = normalizeString(input);
-  return cristalMap[norm]?.cargaMasiva;
+  return cristalMap[norm];
 }
 
 export function findSeparador(input: string): Separador {

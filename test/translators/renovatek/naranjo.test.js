@@ -13,8 +13,8 @@ describe("translate function", () => {
           ancho: 220,
           alto: 1383,
           composicion: {
-            vidrio_1: "INC 4",
-            vidrio_2: "INC 4",
+            vidrio_1: { cargaMasiva: "INC 4" },
+            vidrio_2: { cargaMasiva: "INC 4" },
             vidrio_3: undefined,
             separador_1: {
               color: "BR OSC",
@@ -38,8 +38,8 @@ describe("translate function", () => {
           ancho: 220,
           alto: 1383,
           composicion: {
-            vidrio_1: "INC 4",
-            vidrio_2: "INC 4",
+            vidrio_1: { cargaMasiva: "INC 4" },
+            vidrio_2: { cargaMasiva: "INC 4" },
             vidrio_3: undefined,
             separador_1: {
               color: "BR OSC",
@@ -63,7 +63,7 @@ describe("translate function", () => {
           ancho: 763,
           alto: 1198,
           composicion: {
-            vidrio_1: "INC 4",
+            vidrio_1: { cargaMasiva: "INC 4" },
             vidrio_2: undefined,
             vidrio_3: undefined,
             separador_1: undefined,
@@ -87,8 +87,8 @@ describe("translate function", () => {
           ancho: 220,
           alto: 1383,
           composicion: {
-            vidrio_1: "INC 4",
-            vidrio_2: "INC 4",
+            vidrio_1: { cargaMasiva: "INC 4" },
+            vidrio_2: { cargaMasiva: "INC 4" },
             vidrio_3: undefined,
             separador_1: {
               color: "BR OSC",
@@ -112,8 +112,8 @@ describe("translate function", () => {
           ancho: 220,
           alto: 1383,
           composicion: {
-            vidrio_1: "INC 4",
-            vidrio_2: "INC 4",
+            vidrio_1: { cargaMasiva: "INC 4" },
+            vidrio_2: { cargaMasiva: "INC 4" },
             vidrio_3: undefined,
             separador_1: {
               color: "BR OSC",
@@ -137,7 +137,7 @@ describe("translate function", () => {
           ancho: 763,
           alto: 1198,
           composicion: {
-            vidrio_1: "INC 4",
+            vidrio_1: { cargaMasiva: "INC 4" },
             vidrio_2: undefined,
             vidrio_3: undefined,
             separador_1: undefined,
