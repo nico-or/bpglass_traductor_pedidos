@@ -1,3 +1,6 @@
+import { TsvString } from "../types/inputString";
+import { Posicion } from "../types/posicion";
+
 // Output column headers for the "Carga Masiva" sheet:
 // [0] Cantidad
 // [1] Ancho (mm)
@@ -15,7 +18,7 @@
 // [13] Cantidad horizontal
 // [14] Referencia
 
-export function writePedido(pedido) {
+export function writePedido(pedido: Posicion): TsvString {
   return [
     pedido.cantidad,
     pedido.ancho,
@@ -32,5 +35,5 @@ export function writePedido(pedido) {
     "", // pedido.palillo?.verticales;
     "", // pedido.palillo?.horizontales;
     pedido.referencia,
-  ].join("\t");
+  ].join("\t") as TsvString;
 }

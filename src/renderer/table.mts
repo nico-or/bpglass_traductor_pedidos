@@ -1,10 +1,12 @@
-export function writeTableRow(pedido) {
+import { Posicion } from "../types/posicion";
+
+export function writeTableRow(pedido: Posicion): HTMLTableRowElement {
   const tr = document.createElement("tr");
 
   [
-    pedido.cantidad,
-    pedido.ancho,
-    pedido.alto,
+    pedido.cantidad.toString() || "",
+    pedido.ancho?.toString() || "",
+    pedido.alto?.toString() || "",
     pedido.composicion.vidrio_1 || "",
     pedido.composicion.vidrio_2 || "",
     pedido.composicion.separador_1?.medida || "",
