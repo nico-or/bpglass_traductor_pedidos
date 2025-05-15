@@ -1,18 +1,33 @@
 import { translators } from "./translators/index.mjs";
 import { writePedido } from "./renderer/writer.mjs";
 import { writeTableRow } from "./renderer/table.mjs";
+import { spreadsheetString } from "./types/inputString";
 
-const input_textarea = document.querySelector("#input_textarea");
-const input_button = document.querySelector("#input_button");
-const output_textarea = document.querySelector("#output_textarea");
-const output_button = document.querySelector("#output_button");
-const clear_button = document.querySelector("#clear_button");
-const mode_selector = document.querySelector("#mode_selector");
-const output_table = document.querySelector("#output_table");
+const input_textarea = document.querySelector(
+  "#input_textarea"
+) as HTMLTextAreaElement;
+const input_button = document.querySelector(
+  "#input_button"
+) as HTMLButtonElement;
+const output_textarea = document.querySelector(
+  "#output_textarea"
+) as HTMLTextAreaElement;
+const output_button = document.querySelector(
+  "#output_button"
+) as HTMLButtonElement;
+const clear_button = document.querySelector(
+  "#clear_button"
+) as HTMLButtonElement;
+const mode_selector = document.querySelector(
+  "#mode_selector"
+) as HTMLSelectElement;
+const output_table = document.querySelector(
+  "#output_table"
+) as HTMLTableElement;
 
 input_button.addEventListener("click", (e) => {
   e.preventDefault();
-  const input = input_textarea.value;
+  const input = input_textarea.value as spreadsheetString;
   const mode = mode_selector.value;
   const translator = translators[mode];
 
