@@ -1,5 +1,7 @@
 import { parseComposicionLine } from "../../utils/parsing.mjs";
 import { excelString2Number } from "../../utils/normalize.mjs";
+import { Posicion } from "../../types/posicion";
+import { spreadsheetString } from "../../types/inputString";
 
 // Input format:
 // [0] referencia
@@ -15,7 +17,7 @@ import { excelString2Number } from "../../utils/normalize.mjs";
 // [10]
 // [11] alto
 
-export default function translate(inputText) {
+export default function translate(inputText: spreadsheetString): Posicion[] {
   const lines = inputText
     .split("\n")
     .map((line) => line.split("\t"))

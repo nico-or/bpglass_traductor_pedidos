@@ -1,5 +1,7 @@
 import { normalizeString, excelString2Number } from "../../utils/normalize.mjs";
 import { findVidrio, findSeparador } from "../../utils/parsing.mjs";
+import { Posicion } from "../../types/posicion";
+import { spreadsheetString } from "../../types/inputString";
 
 // Input format:
 // [0] Item
@@ -11,7 +13,7 @@ import { findVidrio, findSeparador } from "../../utils/parsing.mjs";
 // [6] Cristal 2
 // [7] Separador
 
-export default function translate(inputText) {
+export default function translate(inputText: spreadsheetString): Posicion[] {
   const lines = inputText
     .split("\n")
     .filter((line) => line !== "")
